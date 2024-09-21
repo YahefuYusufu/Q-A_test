@@ -1,9 +1,8 @@
-package part01;
+package dashboard;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -16,7 +15,6 @@ public class Login {
     @BeforeClass
     public void setUp() {
         driver = new ChromeDriver();
-        Dimension smallSize = new Dimension(800, 600); // Example for small size
         Dimension mediumSize = new Dimension(1024, 768);
         driver.manage().window().setSize(mediumSize);
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
