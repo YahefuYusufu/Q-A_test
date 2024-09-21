@@ -4,11 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Login {
+public class FieldLogin {
 
     WebDriver driver;
 
@@ -36,6 +37,9 @@ public class Login {
         password.sendKeys("admin123");
 
         driver.findElement(By.tagName("button")).click();
-
+        Thread.sleep(2000);
+        String actualResult = driver.findElement(By.tagName("h6")).getText();
+        String expectedText = "Dashboard";
+        Assert.assertNotEquals(actualResult,expectedText);
     }
 }
