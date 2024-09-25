@@ -36,7 +36,8 @@ public class BaseTest {
 
     @AfterClass
     private void tearDown() {
-        delay(5000);
+        delay(3000);
         driver.quit();
+        //next radio button
     }
 }
